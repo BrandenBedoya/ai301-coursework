@@ -165,17 +165,33 @@ arguable scope call. The alternative — loosening the check until `issue-19` pa
 
 **Selection rationale**
 
-<!-- BRANDEN: this section is graded on being in YOUR OWN WORDS. Answer all three below,
-     then delete these comment lines. Short and honest is explicitly enough. -->
+**1. The issue's fit to my interests and to the time available.**
 
-1. *The issue's fit to your interests and to the time available.*
+I picked #18 because it is the issue in PathReview closest to something I am actually
+going to build. I already run a Telegram bot that pulls market data from an API and posts
+daily buy/sell alerts, and the next thing I want to add is a paid data source plus an MCP
+connection that can execute instead of just alerting me. #18 is a tool that does not fetch
+the data its consumer expects, which is the same problem I will have wiring in a new data
+source. On time: it is estimated at 2 to 4 hours, but that assumes the project already
+runs. I am budgeting most of Unit 2 for Docker, `make setup`, migrations and the seeded
+database before I touch the bug itself.
 
-   TODO
+**2. What the verdict identified correctly, and what I weighed that the rubric could not.**
 
-2. *What the verdict identified correctly, and what you weighed that the rubric could not.*
+My rubric confirmed the things I would otherwise have had to check by hand: the repo is
+active and not archived, the issue is one bounded change with named files, nothing is
+formally claiming it, and the contributing docs do not ban AI-assisted work. It ran the
+same seven checks on #69 and accepted that one too, so the tool genuinely could not
+separate the two. `scope.md` only reorders issues the rubric has already accepted, and
+there is no check anywhere in my rubric for whether I would care about the issue. That
+part was mine. I chose #18 over #69 because the tool-to-consumer data contract in it is
+the specific thing I want to get better at, and a three-line `isinstance` guard is not.
 
-   TODO
+**3. The anticipated difficulty in claiming it.**
 
-3. *The anticipated difficulty in claiming it.*
-
-   TODO
+ColonelToad posted a detailed claim on #18 on 2026-09-24, and my skill flagged it in the
+live run. Under the Path Review house rule a classmate's claim does not block the issue,
+and course credit attaches to the pull request I open rather than to whether it merges, so
+I do not expect claiming itself to be hard. The real difficulty comes later: #18 spans two
+files in two subsystems, so I have to work out what shape `file_structure` should be
+before I can write anything.
