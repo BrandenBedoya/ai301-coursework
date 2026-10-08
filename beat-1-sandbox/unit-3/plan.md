@@ -133,7 +133,7 @@ them under `file_structure`, plus unit tests for that.
 Built on `fix/18-github-file-structure`, commit `1d8e76e`. The approach, the files, and
 the scope are as planned, and the test plan's expected results came out exactly as
 written (`file_structure present: True`, 214 paths, `has_tests = True  has_ci = True`).
-Three small differences from the plan:
+Four small differences from the plan:
 
 1. **A fallback branch I did not plan for.** If the repo response has no
    `default_branch`, the tree request uses `HEAD`. I added it because passing `None`
