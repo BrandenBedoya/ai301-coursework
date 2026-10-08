@@ -1,0 +1,16 @@
+# Rubric: is this pull request ready to submit?
+
+## Checks
+
+| Check | Evidence | Pass condition | Weight |
+|---|---|---|---|
+| `plan-fidelity` | The accepted plan's diagnosis, scope, files, approach, test plan, and deviation notes, compared with every relevant diff hunk and the PR description. | Pass when the diff implements the plan's in-scope change and regression test, or records an actual deviation and its reason under `## Deviations`; no promised in-scope work is silently missing, and the description does not claim work the diff does not deliver or omit a material difference. Deferred or explicitly out-of-scope work is not required. | required |
+| `test-evidence` | The plan's test plan and the issue/repro steps compared with before-and-after evidence and the reported repository-check outcomes. | Pass when evidence shows the primary issue behavior before and after under comparable repro conditions, through exact output or an explicit comparison such as `IDENTICAL`. If that repro cannot be run, a named, directly relevant regression test with its specific passing result may establish the post-fix behavior, but the reason the repro is unavailable must be stated. For additional planned cases, direct output or a regression test in the diff plus a reported passing result for the suite that runs it is sufficient; do not require each passing test's individual log line. A general claim such as "works now" or an unqualified suite-pass statement without observable primary behavior does not establish the fix. Also report relevant repository checks and actual outcomes. A failed or unavailable check may still pass this evidence check only when its status and reason are stated candidly; never describe it as passing. A material regression or a claim unsupported by evidence fails. | required |
+| `reviewable-diff` | The complete diff and commit list, checked against the plan's scope and the issue. | Pass when each changed hunk supports the planned fix, its regression test, or a documented deviation, and the change can be reviewed without unrelated edits, debug leftovers, dead/commented-out code, or avoidable formatting churn obscuring it. Commit count or style alone does not fail a package. | required |
+| `repo-standards` | Repo-facts' PR-template asks, contribution/AI policy, and maintainer-direction thread highlights, compared with the PR title and description, diff, and test evidence. | Pass when every applicable explicit template/policy requirement is satisfied with real evidence or content, the issue reference is correct when required, required AI-use disclosure is present, and any maintainer direction relevant to the planned change is followed or explicitly addressed. Treat eval packages and this course's live PR as AI-assisted unless the package explicitly says otherwise; silence is not evidence of no AI use. If policy requires disclosure, the PR must state the tool and extent of assistance when the policy asks for them. In live mode, include the course-required AI disclosure in Notes for Reviewers. Do not require evidence of post-open CI; do not treat a policy silent about AI as requiring disclosure in eval. | required |
+
+## Verdict rule
+
+`accept` (ready to submit) only if every required check is `pass`.
+Any required `fail` or `unclear` produces `reject` (hold).
+There are no preferred checks in this rubric.
