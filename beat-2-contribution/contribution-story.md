@@ -55,10 +55,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Building issue-scout and diversifying its search results**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I carried my saved fit profile into issue-scout, wrote three broad Python issue searches for agent tools, RAG, and ingestion, and ran two scans of 299 unique results each. After I added a one-result-per-repository rule, the second scan spread across five repositories, but still accepted poor-fit builds while rejecting a bounded agent-safety review because its optional follow-ups were separate PRs. I added an `effort: L` drop filter and revised `single-bounded-change` to assess required work separately from optional follow-ups and to catch explicit unresolved dependencies; the full Unit 1 regression agreed with all 20 gold labels and matched every category.
 
 **Unit 6: [one line on the tool work]**
 
